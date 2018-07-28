@@ -72,7 +72,7 @@ function addTask(e){
     //add class
     li.className = 'collection-item'; //because of Materialize
     //create text node AND APPEND
-    li.appendChild(document.createTextNode(`${new Date().getDate()}: ${taskInput.value}`));
+    li.appendChild(document.createTextNode(`${new Date().toDateString().slice(0,15)} - ${taskInput.value}`));
 
     //create link element
     const link = document.createElement('a');
