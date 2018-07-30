@@ -93,13 +93,7 @@ function addTask(e){
     //clear input
     taskInput.value = '';
   }
-
-  
-
-
  e.preventDefault();
- 
-
 }
 //store in LS
 
@@ -116,12 +110,10 @@ function storeTaskInLocalStorage(task){
 }
 
 //remove task
-
 function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item')){
       if(confirm('Are you sure?')){
         e.target.parentElement.parentElement.remove();
-
       //remove from LS 
       removeTaskFromLocalStorage(e.target.parentElement.parentElement); 
       }
@@ -150,7 +142,6 @@ function removeTaskFromLocalStorage(taskItem){
 function clearTasks(e){
   taskList.innerHTML = '';
    e.preventDefault();
-
    //clear from LS
    clearTasksFromLocalStorage();
 }
@@ -171,8 +162,7 @@ function filterTasks(e){
   document.querySelectorAll('.collection-item').forEach(function(task){
     //select the first child of each task,meaning the NodeText and get the textContent from it
     const item = task.firstChild.textContent;
-    
-    /*we check if the text content of the Nodetext
+     /*we check if the text content of the Nodetext
      for each task is included in the text that we wrote in the filter input*/
     if(item.toLowerCase().indexOf(text) != -1){
       //if it is then keep the task visible,it was before anyway
